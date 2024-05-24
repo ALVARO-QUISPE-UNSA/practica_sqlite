@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import manager
 
 class Movie(models.Model):
     movie_id = models.IntegerField(primary_key=True)
@@ -7,5 +8,6 @@ class Movie(models.Model):
     score = models.FloatField()
     votes = models.IntegerField()
     class Meta:
+        managed = False
         db_table = 'Movie'
 # Create your models here.
