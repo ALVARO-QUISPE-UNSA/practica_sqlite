@@ -6,4 +6,6 @@ class Movie(models.Model):
     year = models.IntegerField()
     score = models.FloatField()
     votes = models.IntegerField()
+    class Meta:
+        db_table = 'Movie'
 # Create your models here.
