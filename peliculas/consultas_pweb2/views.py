@@ -12,6 +12,7 @@ def lista_peliculas (req):
     #return render(req, '')
     msg = f"<p>El primer id es: {first_id} y el titulo: {titulo}</p>"
     return HttpResponse(msg.encode('utf-8'), content_type='text/html')
-
+def vista_index(req):
+    return render(req, 'consultas_pweb2/index.html')
 
 # Create your views here.

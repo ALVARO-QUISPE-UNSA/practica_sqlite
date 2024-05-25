@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from consultas_pweb2.views import lista_peliculas
+from consultas_pweb2 import views as consultas_pweb2_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('peliculas/', lista_peliculas, name='Lista de peliculas'),
+    path('peliculas/', consultas_pweb2_view.lista_peliculas, name='Lista de peliculas'),
+    path('', consultas_pweb2_view.vista_index, name="Página principal"),
 ]
