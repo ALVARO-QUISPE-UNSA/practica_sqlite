@@ -4,6 +4,9 @@ from django.db.models import manager
 class Movie(models.Model):
     movie_id = models.IntegerField(db_column='MovieID', primary_key=True)
     title = models.CharField(max_length=70, db_column='Title')
+    year = models.IntegerField(db_column='Year', null=True)
+    score = models.FloatField(db_column='Score', null=True)
+    votes = models.IntegerField(db_column='Votes', null=True)
     #year = models.IntegerField()
     #score = models.FloatField()
     #votes = models.IntegerField()

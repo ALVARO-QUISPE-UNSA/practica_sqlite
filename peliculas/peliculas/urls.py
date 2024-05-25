@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('peliculas/', consultas_pweb2_view.lista_peliculas, name='Lista de peliculas'),
     path('', consultas_pweb2_view.vista_index, name="Página principal"),
+    path('consultas', consultas_pweb2_view.get_datos, name='Obtener tablas'),
 ]
