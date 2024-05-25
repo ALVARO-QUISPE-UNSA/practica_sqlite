@@ -19,9 +19,10 @@ def vista_index(req):
 def get_datos (req):
     tabla = req.GET.get('tabla')
     if (tabla == 'movies'):
-        movie =  Movie.objects.all()
+        movie =  Movie.objects.all().values()
         lista = list(movie)
         return JsonResponse(lista, safe=False)
         #return 
+    return JsonResponse({'error:': 'Tabla no encontrada'}, status=400)
 
 # Create your views here.
