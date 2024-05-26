@@ -11,16 +11,16 @@ class Movie(models.Model):
         managed = False
         db_table = 'Movie'
 class Actor (models.Model):
-    actor_id = models.IntegerField(db_column='ActorId', primary_key=True)
+    actor_id = models.AutoField(db_column='ActorId', primary_key=True)
     name = models.CharField(db_column='Name', max_length=35, null=True )
     class Meta:
         managed = False
         db_table = 'Actor'
 class Casting(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, db_column='MovieID')
-    actor = models.ForeignKey(Actor, on_delete=models.CASCADE, db_column='ActorId')
+    movie_id = models.IntegerField(db_column='MovieID')
+    actor_id = models.IntegerField(db_column='ActorId')
     ordinal = models.IntegerField(db_column='Ordinal', null=True, blank=True)
     class Meta:
-        #managed = False
+        unique_together = (('actor_id', 'movie_id'),)
         db_table = 'Casting'
-        unique_together = (('MovieID', 'ActorId', 'Ordinal'),)
+        managed = False
