@@ -24,3 +24,4 @@ class Casting(models.Model):
         unique_together = (('actor_id', 'movie_id'),)
         db_table = 'Casting'
         managed = False
+        auto_created = True
