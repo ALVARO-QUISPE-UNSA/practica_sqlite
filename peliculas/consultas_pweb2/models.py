@@ -13,4 +13,6 @@ class Movie(models.Model):
     class Meta:
         managed = False
         db_table = 'Movie'
-# Create your models here.
+class Actor (models.Model):
+    actor_id = models.IntegerField(primary_key=True)
+    name = models.CharField(db_column='MovieID', max_length=35, null=True )

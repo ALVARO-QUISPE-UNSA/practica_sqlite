@@ -10,6 +10,7 @@
   <h1>Hola mundo</h1>
   <p>Este es un documento desde django</p>
   <select id="opciones">
+    <option value="" selected disabled hidden>Selecciona una opción</option>
     <option value="actor">Actores</option>
     <option value="casting">Casting</option>
     <option value="movies">Películas</option>
@@ -17,30 +18,34 @@
   <br>
   <br>
   <table>
-    <tr>
-      <th>Título</th>
-      <th>Año</th>
-      <th>Director</th>
-      <th>Género</th>
-    </tr>
-    <tr>
-      <td>Titanic</td>
-      <td>1997</td>
-      <td>James Cameron</td>
-      <td>Romance, Drama</td>
-    </tr>
-    <tr>
-      <td>El Padrino</td>
-      <td>1972</td>
-      <td>Francis Ford Coppola</td>
-      <td>Drama, Crimen</td>
-    </tr>
-    <tr>
-      <td>El Señor de los Anillos: La Comunidad del Anillo</td>
-      <td>2001</td>
-      <td>Peter Jackson</td>
-      <td>Aventura, Fantasía</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Año</th>
+        <th>Director</th>
+        <th>Género</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Titanic</td>
+        <td>1997</td>
+        <td>James Cameron</td>
+        <td>Romance, Drama</td>
+      </tr>
+      <tr>
+        <td>El Padrino</td>
+        <td>1972</td>
+        <td>Francis Ford Coppola</td>
+        <td>Drama, Crimen</td>
+      </tr>
+      <tr>
+        <td>El Señor de los Anillos: La Comunidad del Anillo</td>
+        <td>2001</td>
+        <td>Peter Jackson</td>
+        <td>Aventura, Fantasía</td>
+      </tr>
+    </tbody>
     <!-- Puedes añadir más filas según necesites -->
   </table>
 </body>

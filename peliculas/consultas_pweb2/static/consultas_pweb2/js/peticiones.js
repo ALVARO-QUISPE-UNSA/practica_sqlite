@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return res.json();
       } )
       .then ( datos => {
-        console.log(datos);
+        for (let key in datos[0])
+          console.log(key);
       } )
       .catch(err => {
         console.log('Capturé:\n', err);
