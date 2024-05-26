@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
       .then ( datos => {
         console.log('Hola')
         console.log(datos);
+        let contenido = encabezado(datos) + cuerpo(datos);
+        document.getElementById('tabla_contenido').innerHTML = contenido;
       } )
       .catch(err => {
         console.log('Capturé:\n', err);
@@ -19,3 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   });
 });
+
+function encabezado(data) {
+  let str='';
+  for (key in data[0])
+    str+=`<th>${key}</th>`
+
+  return `<thead><tr>${str}</tr></thead>`
+}
+
+function cuerpo(data) {
+  str = '';
+  data.forEach((dato) => {
+    let tr = '<tr>';
+    dato.values().forEach((valor) => {
+      tr+=`<td>${valor}</td>`;
+    });
+    str += tr + '<tr>';
+  });
+  return str;
+}
