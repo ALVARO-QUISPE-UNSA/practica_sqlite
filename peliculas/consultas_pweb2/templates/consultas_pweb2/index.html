@@ -4,9 +4,44 @@
   <meta charset="UTF-8">
   <title></title>
   <link rel="stylesheet" href="../../static/consultas_pweb2/css/styles.css"> 
+  <script src="../../static/consultas_pweb2/js/peticiones.js"></script>
 </head>
 <body>
   <h1>Hola mundo</h1>
   <p>Este es un documento desde django</p>
+  <select id="opciones">
+    <option value="id">ID</option>
+    <option value="titulo">Título</option>
+    <option value="director">Director</option>
+    <option value="genero">Género</option>
+  </select>
+
+  <table>
+    <tr>
+      <th>Título</th>
+      <th>Año</th>
+      <th>Director</th>
+      <th>Género</th>
+    </tr>
+    <tr>
+      <td>Titanic</td>
+      <td>1997</td>
+      <td>James Cameron</td>
+      <td>Romance, Drama</td>
+    </tr>
+    <tr>
+      <td>El Padrino</td>
+      <td>1972</td>
+      <td>Francis Ford Coppola</td>
+      <td>Drama, Crimen</td>
+    </tr>
+    <tr>
+      <td>El Señor de los Anillos: La Comunidad del Anillo</td>
+      <td>2001</td>
+      <td>Peter Jackson</td>
+      <td>Aventura, Fantasía</td>
+    </tr>
+    <!-- Puedes añadir más filas según necesites -->
+  </table>
 </body>
 </html>
