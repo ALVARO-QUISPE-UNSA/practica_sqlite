@@ -1,4 +1,3 @@
-console.log('Hola mundo');
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('opciones').addEventListener('change', function() {
     let seleccionado = this.value;
@@ -11,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return res.json();
       } )
       .then ( datos => {
-        for (let key in datos[0])
-          console.log(key);
+        console.log('Hola')
+        console.log(datos);
       } )
       .catch(err => {
         console.log('Capturé:\n', err);
