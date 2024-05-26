@@ -7,9 +7,6 @@ class Movie(models.Model):
     year = models.IntegerField(db_column='Year', null=True)
     score = models.FloatField(db_column='Score', null=True)
     votes = models.IntegerField(db_column='Votes', null=True)
-    #year = models.IntegerField()
-    #score = models.FloatField()
-    #votes = models.IntegerField()
     class Meta:
         managed = False
         db_table = 'Movie'
@@ -19,3 +16,11 @@ class Actor (models.Model):
     class Meta:
         managed = False
         db_table = 'Actor'
+class Casting(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, db_column='MovieID', primary_key=True)
+    actor = models.ForeignKey(Actor, on_delete=models.CASCADE, db_column='ActorId')
+    ordinal = models.IntegerField(db_column='Ordinal', null=True, blank=True)
+    class Meta:
+        managed = False
+        db_table = 'Casting'
+        unique_together = (('movie', 'actor'),)

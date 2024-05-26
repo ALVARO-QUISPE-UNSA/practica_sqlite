@@ -23,6 +23,8 @@ def get_datos (req):
         datos =  models.Movie.objects.all().values()
     elif (tabla == 'actor'):
         datos = models.Actor.objects.all().values()
+    elif (tabla == 'casting'):
+        datos = models.Casting.objects.all().values()
     else:
         return JsonResponse({'error:': 'Tabla no encontrada'}, status=400)
 
