@@ -17,11 +17,10 @@ class Actor (models.Model):
         managed = False
         db_table = 'Actor'
 class Casting(models.Model):
-    movie_id = models.IntegerField(db_column='MovieID')
+    movie_id = models.IntegerField(db_column='MovieID', primary_key=True)
     actor_id = models.IntegerField(db_column='ActorId')
     ordinal = models.IntegerField(db_column='Ordinal', null=True, blank=True)
     class Meta:
         unique_together = (('actor_id', 'movie_id'),)
         db_table = 'Casting'
         managed = False
-        auto_created = True
