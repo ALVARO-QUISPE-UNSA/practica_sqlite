@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('opciones').addEventListener('change', function() {
-    let seleccionado = this.value;
-    console.log(seleccionado);
     let get = 'http://localhost:8000/consultas?tabla=';
     fetch(get + this.value) 
       .then( res => {
@@ -10,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return res.json();
       } )
       .then ( datos => {
-        console.log('Hola')
-        console.log(datos);
         let contenido = encabezado(datos) + cuerpo(datos);
         document.getElementById('tabla_contenido').innerHTML = contenido;
       } )
@@ -34,8 +30,8 @@ function cuerpo(data) {
   str = '';
   data.forEach((dato) => {
     let tr = '<tr>';
-    dato.values().forEach((valor) => {
-      tr+=`<td>${valor}</td>`;
+    Object.values(dato).forEach((value) => {
+      tr+=`<td>${value}</td>`;
     });
     str += tr + '<tr>';
   });
