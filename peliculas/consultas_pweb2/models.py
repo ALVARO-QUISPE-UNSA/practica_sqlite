@@ -17,10 +17,10 @@ class Actor (models.Model):
         managed = False
         db_table = 'Actor'
 class Casting(models.Model):
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, db_column='MovieID', primary_key=True)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, db_column='MovieID')
     actor = models.ForeignKey(Actor, on_delete=models.CASCADE, db_column='ActorId')
     ordinal = models.IntegerField(db_column='Ordinal', null=True, blank=True)
     class Meta:
-        managed = False
+        #managed = False
         db_table = 'Casting'
-        unique_together = (('movie', 'actor'),)
+        unique_together = (('MovieID', 'ActorId', 'Ordinal'),)
